@@ -1,5 +1,7 @@
 import Lottie from 'lottie-react';
 import loginAnimation from '../assets/login.json'
+import { Link } from 'react-router-dom';
+
 
 const Login = () => {
     return (
@@ -28,9 +30,14 @@ const Login = () => {
           </label>
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Login</button>
+          <button className="btn btn-primary bg-blue-300 text-black">Login</button>
+          <div className="divider">OR</div>
+
+          <button onClick="" className="btn bg-red-200 btn-primary text-black">Login with Google</button>
         </div>
       </form>
+      <p className=' mb-4 text-center'>New to this website? please <Link className='text-blue-600' to={"/register"}>Register</Link></p>
+
     </div>
   </div>
 </div>

@@ -19,7 +19,7 @@ const About = () => {
       With our platform, marathon organizers can efficiently set up events, manage participant registrations, and track important details, all while keeping participants informed every step of the way. From city marathons to trail challenges, we ensure each event runs smoothly and provides a memorable experience for everyone involved.
       We look forward to helping you bring your marathon event to life or support your journey as a runner. Explore how our Marathon Management System can elevate your next event or participation!
       </p>
-      <button className="btn btn-primary btn-md">Contact</button>
+      <button className="btn bg-red-200 btn-md">Contact</button>
     </div>
   </div>
 </div>
