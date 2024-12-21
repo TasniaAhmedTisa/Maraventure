@@ -1,16 +1,17 @@
 import { Link } from "react-router-dom";
+import logo from "../../assets/logo.jpg"
 
 const Navbar = () => {
     const links = <>
-    <li><Link to='/'>Home</Link></li>
-    <li><a>Item 3</a></li>
-    <li><a>Item 3</a></li>
-    <li><a>Item 3</a></li>
+    <li><Link to='/' className="text-lg">Home</Link></li>
+    <li><Link to='/marathon' className="text-lg">Marathons</Link></li>
+    <li><Link to='/dashboard' className="text-lg">Dashboard</Link></li>
+    <li><Link to='/useravatar' className="text-lg">User Avatar</Link></li>
 
 
         </>
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar shadow border rounded-t-lg mb- bg-gradient-to-r from-white via-blue-200 to-black ">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -33,7 +34,7 @@ const Navbar = () => {
         {links}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+    <a className="btn btn-ghost text-2xl font-extrabold"><img src={logo} alt="" className="w-20 h-[50px]"/>Maraventure</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -41,8 +42,8 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="gap-2 navbar-end">
-    <Link to='/register' className="btn">Register</Link>
-    <Link to='login' className="btn">Login</Link>
+    <Link to='/register' className="btn text-lg">Register</Link>
+    <Link to='login' className="btn text-lg">Login</Link>
   </div>
 </div>
     );
