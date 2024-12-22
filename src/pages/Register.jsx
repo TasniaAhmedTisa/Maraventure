@@ -18,17 +18,15 @@ const Register = () => {
   const handleGoogleSignIn = () =>{
     signInWithPopup(auth, provider)
     .then((res) =>{
-     // console.log(res.user)
+      //console.log(res.user)
       setUser(res.user)
       navigate('/');
     })
-    .catch(error =>{
-      //console.log('Error', error)
-    })
+    
   }
   const handleRegister = e =>{
     e.preventDefault();
-    const name = e.target.username.value;
+    //const name = e.target.username.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
     //console.log(name, email, password)

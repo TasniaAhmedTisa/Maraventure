@@ -5,6 +5,10 @@ import Register from "../pages/Register";
 import Login from "../pages/Login";
 import Marathons from "../pages/Marathons";
 import Dashboard from "../pages/Dashboard";
+import Notfound from "../components/Notfound";
+import AddMara from "../pages/AddMara";
+import Details from "../pages/Details";
+import MyList from "../pages/MyList";
 
 
 const Router = createBrowserRouter([
@@ -22,7 +26,17 @@ const Router = createBrowserRouter([
         },
         {
           path: '/dashboard',
-          element: <Dashboard></Dashboard>
+          element: <Dashboard></Dashboard>,
+          children:[
+            {
+              path:'/dashboard/addmara',
+              element:<AddMara></AddMara>
+            },
+            {
+              path:'/dashboard/my-list',
+              element:<MyList></MyList>
+            }
+          ]
         },
         {
             path: 'register',
@@ -31,9 +45,17 @@ const Router = createBrowserRouter([
         {
             path:'login',
             element: <Login></Login>
-        }
+        },
+        
 
+        
       ]
     },
+
+    {
+      path: "*",
+      element:<Notfound></Notfound>
+    },
+
   ]);
   export default Router;

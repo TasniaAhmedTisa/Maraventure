@@ -1,0 +1,83 @@
+[
+    {
+      "id": 1,
+      "image": "https://example.com/images/spring-marathon.jpg",
+      "title": "Spring City Marathon 2024",
+      "location": "New York City, NY",
+      "registrationStart": "2024-01-10",
+      "registrationEnd": "2024-03-01"
+    },
+    {
+      "id": 2,
+      "image": "https://example.com/images/autumn-dash.jpg",
+      "title": "Autumn Dash 2024",
+      "location": "Chicago, IL",
+      "registrationStart": "2024-02-01",
+      "registrationEnd": "2024-04-15"
+    },
+    {
+      "id": 3,
+      "image": "https://example.com/images/summer-run.jpg",
+      "title": "Summer Run Challenge",
+      "location": "Austin, TX",
+      "registrationStart": "2024-03-15",
+      "registrationEnd": "2024-05-30"
+    },
+    {
+      "id": 4,
+      "image": "https://example.com/images/winter-race.jpg",
+      "title": "Winter Wonderland Marathon",
+      "location": "Denver, CO",
+      "registrationStart": "2024-04-01",
+      "registrationEnd": "2024-06-20"
+    },
+    {
+      "id": 5,
+      "image": "https://example.com/images/coastal-marathon.jpg",
+      "title": "Coastal Run Extravaganza",
+      "location": "San Diego, CA",
+      "registrationStart": "2024-05-01",
+      "registrationEnd": "2024-07-15"
+    },
+    {
+      "id": 6,
+      "image": "https://example.com/images/desert-marathon.jpg",
+      "title": "Desert Dash Ultra",
+      "location": "Phoenix, AZ",
+      "registrationStart": "2024-06-10",
+      "registrationEnd": "2024-08-01"
+    },
+    {
+      "id": 7,
+      "image": "https://example.com/images/forest-marathon.jpg",
+      "title": "Forest Trail Marathon",
+      "location": "Seattle, WA",
+      "registrationStart": "2024-07-01",
+      "registrationEnd": "2024-09-10"
+    },
+    {
+      "id": 8,
+      "image": "https://example.com/images/sunset-marathon.jpg",
+      "title": "Sunset Glow Run",
+      "location": "Los Angeles, CA",
+      "registrationStart": "2024-08-15",
+      "registrationEnd": "2024-10-01"
+    },
+    {
+      "id": 9,
+      "image": "https://example.com/images/river-marathon.jpg",
+      "title": "Riverbank Marathon",
+      "location": "Portland, OR",
+      "registrationStart": "2024-09-01",
+      "registrationEnd": "2024-11-05"
+    },
+    {
+      "id": 10,
+      "image": "https://example.com/images/cityscape-marathon.jpg",
+      "title": "Cityscape Sprint Marathon",
+      "location": "Boston, MA",
+      "registrationStart": "2024-10-01",
+      "registrationEnd": "2024-12-15"
+    }
+  ]
+  
