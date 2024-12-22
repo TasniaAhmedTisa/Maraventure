@@ -7,7 +7,6 @@ import Marathons from "../pages/Marathons";
 import Dashboard from "../pages/Dashboard";
 import Notfound from "../components/Notfound";
 import AddMara from "../pages/AddMara";
-import Details from "../pages/Details";
 import MyList from "../pages/MyList";
 
 
@@ -35,6 +34,10 @@ const Router = createBrowserRouter([
             {
               path:'/dashboard/my-list',
               element:<MyList></MyList>
+            },
+            {
+              path:'/dashboard/apply-list',
+              element:<MyList></MyList>
             }
           ]
         },
@@ -46,6 +49,7 @@ const Router = createBrowserRouter([
             path:'login',
             element: <Login></Login>
         },
+        
         
 
         

@@ -58,8 +58,12 @@ const Navbar = () => {
           </li>
           <li>
             <Link to="/dashboard/my-list" className="block px-4 py-2 hover:bg-gray-100">
-              My List
-            </Link>
+            My Marathon List            </Link>
+          </li>
+          <li>
+            <Link to="/dashboard/apply-list" className="block px-4 py-2 hover:bg-gray-100">
+            My Apply List         
+               </Link>
           </li>
         </ul>
       </li>
