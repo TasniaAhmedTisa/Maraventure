@@ -8,6 +8,7 @@ import Dashboard from "../pages/Dashboard";
 import Notfound from "../components/Notfound";
 import AddMara from "../pages/AddMara";
 import MyList from "../pages/MyList";
+import Details from "../pages/Details";
 
 
 const Router = createBrowserRouter([
@@ -49,7 +50,10 @@ const Router = createBrowserRouter([
             path:'login',
             element: <Login></Login>
         },
-        
+        {
+          path:"/marathons/:id",
+           element:<Details></Details>
+        }
         
 
         
