@@ -7,7 +7,7 @@ const MarathonCard = ({marathon}) => {
 
 
     return (
-        <div className="card glass">
+        <div className="card glass shadow-lg shadow-red-400">
   <figure>
     <img
     className="mt-5 rounded-lg"
