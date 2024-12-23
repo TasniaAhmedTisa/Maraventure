@@ -24,7 +24,6 @@ const Marathon = () => {
       });
   }, []);
 
-  // Render loading, error, or the marathons list
   if (loading) {
     return <p className="text-center text-xl text-blue-600">Loading marathons...</p>;
   }
@@ -40,7 +39,7 @@ const Marathon = () => {
       <p className="text-center text-xl">Explore marathons and register today!</p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-4">
         {marathons.length > 0 ? (
-          marathons.map((marathon) => (
+           marathons.slice(0, 6).map((marathon) => (
             <MarathonCard key={marathon._id} marathon={marathon}></MarathonCard>
           ))
         ) : (

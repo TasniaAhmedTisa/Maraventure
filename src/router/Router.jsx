@@ -9,6 +9,7 @@ import Notfound from "../components/Notfound";
 import AddMara from "../pages/AddMara";
 import MyList from "../pages/MyList";
 import Details from "../pages/Details";
+import Apply from "../pages/Apply";
 
 
 const Router = createBrowserRouter([
@@ -28,19 +29,20 @@ const Router = createBrowserRouter([
           path: '/dashboard',
           element: <Dashboard></Dashboard>,
           children:[
-            {
-              path:'/dashboard/addmara',
-              element:<AddMara></AddMara>
-            },
-            {
-              path:'/dashboard/my-list',
-              element:<MyList></MyList>
-            },
-            {
-              path:'/dashboard/apply-list',
-              element:<MyList></MyList>
-            }
+            
           ]
+        },
+        {
+          path:'/dashboard/addmara',
+          element:<AddMara></AddMara>
+        },
+        {
+          path:'/dashboard/my-list',
+          element:<MyList></MyList>
+        },
+        {
+          path:'/dashboard/apply-list',
+          element:<Apply></Apply>
         },
         {
             path: 'register',
