@@ -10,6 +10,7 @@ import AddMara from "../pages/AddMara";
 import MyList from "../pages/MyList";
 import Details from "../pages/Details";
 import Apply from "../pages/Apply";
+import PrivateRoute from "./PrivateRoute";
 
 
 const Router = createBrowserRouter([
@@ -23,7 +24,7 @@ const Router = createBrowserRouter([
         },
         {
           path: '/marathon',
-          element:<Marathons></Marathons>
+          element:<PrivateRoute><Marathons></Marathons></PrivateRoute>
         },
         {
           path: '/dashboard',
@@ -34,7 +35,7 @@ const Router = createBrowserRouter([
         },
         {
           path:'/dashboard/addmara',
-          element:<AddMara></AddMara>
+          element:<PrivateRoute><AddMara></AddMara></PrivateRoute>
         },
         {
           path:'/dashboard/my-list',

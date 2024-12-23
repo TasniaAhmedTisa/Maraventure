@@ -9,7 +9,7 @@ import { useState } from 'react';
 
 const Login = () => {
   const navigate = useNavigate();
-  const [user, setUser] = useState(null);
+  //const [user, setUser] = useState(null);
 
   const [errorMessage, setErrorMessage] = useState('');
 
