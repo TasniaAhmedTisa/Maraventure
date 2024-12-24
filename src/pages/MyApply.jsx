@@ -1,5 +1,16 @@
+import { useEffect, useState } from "react";
+import useAuth from "../hook/useAuth";
 
 const MyApply = () => {
+
+  const {user} =useAuth()
+  const [marathons, setMarathons] = useState([])
+  useEffect(() =>{
+    fetch(`http://localhost:3000/marathon-application?email=${user.email}`)
+     .then(res => res.json())
+     .then(data => setMarathons(data))
+
+  },[user.email])
     return (
         <div className="bg-gradient-to-t from-cyan-600 w-11/12 mx-auto min-h-screen mb-10">
       <h1 className="text-3xl font-bold text-center pt-10 py-4">My Apply List</h1>
@@ -11,9 +22,9 @@ const MyApply = () => {
             <tr>
               <th className="border border-b-4 border-red-300 px-4 py-2">Image</th>
               <th className="border border-b-4 border-red-300 px-4 py-2">Title</th>
-              <th className="border border-b-4 border-red-300 px-4 py-2">Start Date</th>
-              <th className="border border-b-4 border-red-300 px-4 py-2">End Date</th>
-              <th className="border border-b-4 border-red-300 px-4 py-2">Minimum Donation</th>
+              <th className="border border-b-4 border-red-300 px-4 py-2">Marathon Start Date</th>
+              <th className="border border-b-4 border-red-300 px-4 py-2">Location</th>
+
               <th className="border border-b-4 border-red-300 px-4 py-2">Actions</th>
             </tr>
           </thead>
@@ -22,10 +33,10 @@ const MyApply = () => {
                 <td className="border border-b-4 border-red-300 px-4 py-2">
                   <img src="" alt="" className="w-16 h-16 object-cover" />
                 </td>
-                <td className="border border-b-4 border-red-300 px-4 py-2">title</td>
-                <td className="border border-b-4 border-red-300 px-4 py-2">type</td>
-                <td className="border border-b-4 border-red-300 px-4 py-2">deadline</td>
-                <td className="border border-b-4 border-red-300 px-4 py-2">minDonation</td>
+                <td className="border border-b-4 border-red-300 px-4 py-2"></td>
+                <td className="border border-b-4 border-red-300 px-4 py-2"></td>
+                <td className="border border-b-4 border-red-300 px-4 py-2"></td>
+
                 <td className="border border-b-4 border-red-300 px-4 py-2">
                   <button
                     className="bg-blue-500 text-white px-3 py-1 rounded mr-2"
