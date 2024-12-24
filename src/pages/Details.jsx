@@ -59,7 +59,7 @@ const Details = () => {
       <p className="text-xl"><strong>Registation Count:</strong>{marathon.count}</p>
 
       <div>
-        <Link to={"/register"}> <button
+        <Link to={`/marathonapply/${id}`}> <button
           className="btn bg-red-300 m-4"
           
         >
