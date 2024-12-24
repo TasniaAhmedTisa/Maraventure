@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import useAuth from "../hook/useAuth";
+import Marathon from "../components/Marathon";
 
 const MyApply = () => {
 
@@ -29,13 +30,14 @@ const MyApply = () => {
             </tr>
           </thead>
           <tbody>
-              <tr key="">
+            {
+              marathons.map(marathon => <tr key="marathon_id">
                 <td className="border border-b-4 border-red-300 px-4 py-2">
-                  <img src="" alt="" className="w-16 h-16 object-cover" />
+                  <img src={marathon.image} alt="" className="w-16 h-16 object-cover" />
                 </td>
-                <td className="border border-b-4 border-red-300 px-4 py-2"></td>
-                <td className="border border-b-4 border-red-300 px-4 py-2"></td>
-                <td className="border border-b-4 border-red-300 px-4 py-2"></td>
+                <td className="border border-b-4 border-red-300 px-4 py-2">{marathon.title}</td>
+                <td className="border border-b-4 border-red-300 px-4 py-2">{marathon.marathonStartDate}</td>
+                <td className="border border-b-4 border-red-300 px-4 py-2">{marathon.location}</td>
 
                 <td className="border border-b-4 border-red-300 px-4 py-2">
                   <button
@@ -50,7 +52,9 @@ const MyApply = () => {
                     Delete
                   </button>
                 </td>
-              </tr>
+              </tr> )
+            }
+              
           </tbody>
         </table>
         </div>
