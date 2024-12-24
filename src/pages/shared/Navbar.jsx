@@ -1,28 +1,29 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.jpg"
-import { useEffect, useState } from "react";
-import { auth } from "../../firebase.config";
+import { useContext, useEffect, useState } from "react";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
+import AuthContext from "../../context/AuthContext";
 
 const Navbar = () => {
-  const [user, setUser] = useState(null);
+  const {user, signOutUser} = useContext(AuthContext)
+  //const [user, setUser] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
-  const auth = getAuth()
-  useEffect(() =>{
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      if (currentUser) {
-        setUser(currentUser); 
-      } else {
-        setUser(null); 
-      }
-  })
-  return () => unsubscribe();
-  }, [auth]);
+  // const auth = getAuth()
+  // useEffect(() =>{
+  //   const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+  //     if (currentUser) {
+  //       setUser(currentUser); 
+  //     } else {
+  //       setUser(null); 
+  //     }
+  // })
+  // return () => unsubscribe();
+  // }, [auth]);
   
 
   const handleLogout = () => {
-    signOut(auth)  
+    signOutUser()  
       .then(() => {
         setIsLoggedIn(false); // Set login status to false after logout
         navigate("/login"); 

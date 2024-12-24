@@ -3,55 +3,61 @@ import { useNavigate, useParams } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { auth } from "../firebase.config";
+import useAuth from "../hook/useAuth";
+import Swal from "sweetalert2";
 
 const MarathonRegister = ({ marathonTitle, marathonStartDate }) => {
   const { id } = useParams(); 
+  const {user} = useAuth()
+  //console.log(id, user)
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState(auth.currentUser?.email || ""); // Auto-fill logged-in user's email
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [contactNumber, setContactNumber] = useState("");
-  const [additionalInfo, setAdditionalInfo] = useState("");
+  const [email, setEmail] = useState(auth.currentUser?.email || ""); 
+  
+  const handleFormSubmit = e =>{
+    e.preventDefault()
+    const form = e.target
+    const firstName = form.firstName.value
+    const lastName = form.lastName.value
+    const contactNumber = form.contactNumber.value
+    const otherinfo = form.otherinfo.value
 
-  const handleFormSubmit = async (e) => {
-    e.preventDefault();
 
-    if (!firstName || !lastName || !contactNumber) {
-      toast.error("Please fill in all required fields!");
-      return;
-    }
+    //console.log(firstName,lastName,contactNumber, otherinfo)
 
-    const registrationData = {
-      email,
+    const marathonApplication ={
+      marathon_id: id,
+      applicant_email: user.email,
       firstName,
       lastName,
       contactNumber,
-      additionalInfo,
-      marathonId: id,
-    };
-
-    try {
-      const response = await fetch(`http://localhost:3000/marathons/${id}/register`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(registrationData),
-      });
-
-      const data = await response.json();
-      if (response.ok) {
-        toast.success("Registration successful!");
-        setTimeout(() => navigate("/dashboard"), 2000);
-      } else {
-        toast.error(data.message || "Registration failed.");
-      }
-    } catch (err) {
-      console.error("Error during registration:", err);
-      toast.error("An error occurred. Please try again.");
+      otherinfo
     }
-  };
+
+    fetch('http://localhost:3000/marathon-applications', {
+      method: 'POST',
+      headers: {
+          'content-type': 'application/json'
+      },
+      body: JSON.stringify(marathonApplication)
+  })
+      .then(res => res.json())
+      .then(data => {
+          if (data.insertedId) {
+              Swal.fire({
+                  position: "top-end",
+                  icon: "success",
+                  title: "Your work has been saved",
+                  showConfirmButton: false,
+                  timer: 1500
+              });
+              navigate('/dashboard/apply-list')
+          }
+      })
+
+}
+    
+    
 
   return (
     <div className="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-lg">
@@ -90,49 +96,42 @@ const MarathonRegister = ({ marathonTitle, marathonStartDate }) => {
         </div>
 
         <div className="mb-4">
-          <label htmlFor="firstName" className="block font-medium mb-2">First Name</label>
+          <label className="block font-medium mb-2">First Name</label>
           <input
             type="text"
-            id="firstName"
+            name="firstName"
             className="w-full border px-4 py-2 rounded"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
             required
           />
         </div>
 
         <div className="mb-4">
-          <label htmlFor="lastName" className="block font-medium mb-2">Last Name</label>
+          <label className="block font-medium mb-2">Last Name</label>
           <input
             type="text"
-            id="lastName"
+            name="lastName"
             className="w-full border px-4 py-2 rounded"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
             required
           />
         </div>
 
         <div className="mb-4">
-          <label htmlFor="contactNumber" className="block font-medium mb-2">Contact Number</label>
+          <label className="block font-medium mb-2">Contact Number</label>
           <input
             type="text"
-            id="contactNumber"
+            name="contactNumber"
             className="w-full border px-4 py-2 rounded"
-            value={contactNumber}
-            onChange={(e) => setContactNumber(e.target.value)}
-            required
+           
           />
         </div>
 
         <div className="mb-4">
-          <label htmlFor="additionalInfo" className="block font-medium mb-2">Additional Info</label>
+          <label className="block font-medium mb-2">Additional Info</label>
           <textarea
-            id="additionalInfo"
+            name="otherinfo"
             className="w-full border px-4 py-2 rounded"
             rows="4"
-            value={additionalInfo}
-            onChange={(e) => setAdditionalInfo(e.target.value)}
+            
           ></textarea>
         </div>
 

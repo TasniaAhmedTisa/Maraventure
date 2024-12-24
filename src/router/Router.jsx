@@ -9,9 +9,9 @@ import Notfound from "../components/Notfound";
 import AddMara from "../pages/AddMara";
 import MyList from "../pages/MyList";
 import Details from "../pages/Details";
-import Apply from "../pages/Apply";
 import PrivateRoute from "./PrivateRoute";
 import MarathonRegister from "../pages/MarathonRegister";
+import MyApply from "../pages/MyApply";
 
 
 const Router = createBrowserRouter([
@@ -44,7 +44,7 @@ const Router = createBrowserRouter([
         },
         {
           path:'/dashboard/apply-list',
-          element:<Apply></Apply>
+          element:<MyApply></MyApply>
         },
         {
             path: 'register',
@@ -60,7 +60,7 @@ const Router = createBrowserRouter([
         },
         {
           path: "/marathonapply/:id",
-          element:<MarathonRegister></MarathonRegister>
+          element:<PrivateRoute><MarathonRegister></MarathonRegister></PrivateRoute>
         }
         
 
