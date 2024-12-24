@@ -78,6 +78,24 @@
       "location": "Boston, MA",
       "registrationStart": "2024-10-01",
       "registrationEnd": "2024-12-15"
+    },
+    {
+      "id": 9,
+      "image": "https://example.com/images/river-marathon.jpg",
+      "title": "Riverbank Marathon",
+      "location": "Portland, OR",
+      "registrationStart": "2024-09-01",
+      "registrationEnd": "2024-11-05",
+      "marathonStartDate": "2024-12-01"
+    },
+    {
+      "id": 10,
+      "image": "https://example.com/images/cityscape-marathon.jpg",
+      "title": "Cityscape Sprint Marathon",
+      "location": "Boston, MA",
+      "registrationStart": "2024-10-01",
+      "registrationEnd": "2024-12-15",
+      "marathonStartDate": "2025-01-10"
     }
   ]
   
