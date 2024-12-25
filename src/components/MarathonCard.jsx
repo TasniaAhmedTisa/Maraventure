@@ -4,9 +4,9 @@ import { CountdownCircleTimer } from "react-countdown-circle-timer";
 
 const MarathonCard = ({marathon}) => {
     // eslint-disable-next-line react/prop-types
-    const {_id, image, title, location, registrationStart,registrationEnd, marathonStartDate } = marathon;
+    const {_id, image, title, location, startRegistrationDate,endRegistrationDate, marathonStartDate } = marathon;
 
-    const eventDate = new Date(registrationStart).getTime(); 
+    const eventDate = new Date(startRegistrationDate).getTime(); 
     const currentTime = new Date().getTime(); 
     const remainingTimeInSeconds = Math.max((eventDate - currentTime) / 1000, 0);
     
@@ -23,8 +23,8 @@ const MarathonCard = ({marathon}) => {
   <div className="card-body">
     <h2 className="card-title">{title}</h2>
     <p className="">Location: {location}</p>
-    <p>Registration Start: {new Date(registrationStart).toLocaleString()}</p>
-     <p>Registration End: {new Date(registrationEnd).toLocaleString()}</p>
+    <p>Registration Start: {new Date(startRegistrationDate).toLocaleString()}</p>
+     <p>Registration End: {new Date(endRegistrationDate).toLocaleString()}</p>
      <p>Marathon Start: {new Date(marathonStartDate).toLocaleString()}</p>
 
 

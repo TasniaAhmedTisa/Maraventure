@@ -24,9 +24,13 @@ const AddMara = () => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
+    console.log("userName:", user?.name);
+  console.log("userEmail:", user?.email);
+
     // Form validation
     if (
-      !title ||
+      !title || 
+      !user?.email|| 
       !location ||
       !runningDistance ||
       !description ||
@@ -41,6 +45,8 @@ const AddMara = () => {
 
     const newMarathon = {
       title,
+      //userName: user?.name,
+      userEmail: user?.email,
       location,
       runningDistance,
       description,
@@ -50,6 +56,7 @@ const AddMara = () => {
       marathonStartDate: marathonStartDate.toISOString(),
       image:image, 
     };
+    
 
     //console.log("Submitting payload:", newMarathon); // Debugging payload
 
@@ -94,6 +101,14 @@ const AddMara = () => {
               required
             />
           </div>
+
+                {/* Email */}
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text"> Email</span>
+                    </label>
+                    <input type="text" value={user?.email} name='email' placeholder="Email" className="input input-bordered" required />
+                </div>
 
           <div className="mb-4">
             <label className="block font-medium mb-2">Registration Start Date</label>
