@@ -15,7 +15,7 @@ const AddMara = () => {
   const [runningDistance, setRunningDistance] = useState("");
   const [description, setDescription] = useState("");
   const [count, setCount] = useState(0);
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState("");
 
   const [startRegistrationDate, setStartRegistrationDate] = useState(null);
   const [endRegistrationDate, setEndRegistrationDate] = useState(null);
@@ -39,18 +39,19 @@ const AddMara = () => {
       return;
     }
 
-    // Prepare JSON payload
-  const newMarathon = {
-    title,
-    location,
-    runningDistance,
-    description,
-    count,
-    startRegistrationDate: startRegistrationDate.toISOString(),
-    endRegistrationDate: endRegistrationDate.toISOString(),
-    marathonStartDate: marathonStartDate.toISOString(),
-    image, 
-  };
+    const newMarathon = {
+      title,
+      location,
+      runningDistance,
+      description,
+      count: count || 0,
+      startRegistrationDate: startRegistrationDate.toISOString(),
+      endRegistrationDate: endRegistrationDate.toISOString(),
+      marathonStartDate: marathonStartDate.toISOString(),
+      image:image, 
+    };
+
+    //console.log("Submitting payload:", newMarathon); // Debugging payload
 
     try {
       const response = await fetch("http://localhost:3000/marathons", {
@@ -64,15 +65,16 @@ const AddMara = () => {
       if (response.ok) {
         const data = await response.json();
         toast.success("Marathon added successfully!");
-        console.log(data);
+        console.log("Response data:", data);
         navigate("/dashboard/my-list");
       } else {
-        toast.error("Failed to add marathon!");
-        console.error("Error:", response.statusText);
+        const errorData = await response.json(); 
+        console.error("Error response:", errorData);
+        toast.error("Failed to add marathon! Check the server response.");
       }
     } catch (error) {
       console.error("Error adding marathon:", error);
-      toast.error("Failed to add marathon!");
+      toast.error("Failed to add marathon due to a network error!");
     }
   };
 
@@ -170,7 +172,7 @@ const AddMara = () => {
             <input
               type="number"
               value={count}
-              onChange={(e) => setCount(e.target.value)}
+              onChange={(e) => setCount(Number(e.target.value))}
               className="w-full border px-4 py-2 rounded"
               required
             />
@@ -180,7 +182,8 @@ const AddMara = () => {
             <label className="block font-medium mb-2">Marathon Image</label>
             <input
               type="url"
-              accept="image/*"
+              value={image}
+              onChange={(e) => setImage(e.target.value)}
               className="w-full border px-4 py-2 rounded"
               required
             />
