@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -6,13 +6,33 @@ import { auth } from "../firebase.config";
 import useAuth from "../hook/useAuth";
 import Swal from "sweetalert2";
 
-const MarathonRegister = ({ marathonTitle, marathonStartDate }) => {
+const MarathonRegister = () => {
   const { id } = useParams(); 
   const {user} = useAuth()
   //console.log(id, user)
   const navigate = useNavigate();
+  //console.log(marathonTitle, marathonStartDate)
 
-  const [email, setEmail] = useState(auth.currentUser?.email || ""); 
+  const [email, setEmail] = useState(auth.currentUser?.email || "");
+  const [marathonTitle, setMarathonTitle] = useState("");
+  const [marathonStartDate, setMarathonStartDate] = useState(""); 
+
+  useEffect(() => {
+    const fetchMarathonDetails = async () => {
+      try {
+        const response = await fetch(`http://localhost:3000/marathons/${id}`);
+        const data = await response.json();
+        if (data) {
+          setMarathonTitle(data.title);
+          setMarathonStartDate(new Date(data.marathonStartDate).toLocaleDateString()); // Format date
+        }
+      } catch (error) {
+        console.error('Error fetching marathon details:', error);
+      }
+    };
+
+    fetchMarathonDetails();
+  }, [id]);
   
   const handleFormSubmit = e =>{
     e.preventDefault()
