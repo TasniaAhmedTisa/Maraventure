@@ -9,16 +9,18 @@ const MyApply = () => {
 
   const [selectedApplication, setSelectedApplication] = useState(null);
   const [filteredMarathons, setFilteredMarathons] = useState([]); // Track filtered marathons
+  const [sortOrder, setSortOrder] = useState('desc'); // State for sorting order
+
 
 
   useEffect(() => {
-    fetch(`http://localhost:3000/marathon-application?email=${user.email}`)
+    fetch(`https://project-11-server-ten.vercel.app/marathon-application?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setMarathons(data);
         setFilteredMarathons(data); 
       }); 
-     }, [user.email]);
+     }, [user.email, sortOrder]);
 
       // Handle Search Input Change
   const handleSearchChange = (e) => {
@@ -28,6 +30,10 @@ const MyApply = () => {
     );
     setFilteredMarathons(filteredData);
   };
+  const handleSortChange = (e) => {
+    setSortOrder(e.target.value); // Update sort order based on user selection
+  };
+
 
   const handleUpdate = (application) => {
     console.log("Updating application:", application); 
@@ -43,7 +49,7 @@ const MyApply = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/marathon-application/${applicationId}`, {
+        fetch(`https://project-11-server-ten.vercel.app/marathon-application/${applicationId}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -72,7 +78,7 @@ const MyApply = () => {
     };
     console.log("Updated Data:", updatedData); // Debugging
 
-    fetch(`http://localhost:3000/marathon-application/${selectedApplication._id}`, {
+    fetch(`https://project-11-server-ten.vercel.app/marathon-application/${selectedApplication._id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedData),
@@ -117,6 +123,17 @@ const MyApply = () => {
           placeholder="Search by Title"
           className="w-1/3 p-2 border border-gray-300 rounded"
         />
+      </div>
+      {/* Sorting Dropdown */}
+      <div className="flex justify-center mb-4">
+        <select
+          value={sortOrder}
+          onChange={handleSortChange}
+          className="w-1/3 p-2 border border-gray-300 rounded"
+        >
+          <option value="desc">Newest to Oldest</option>
+          <option value="asc">Oldest to Newest</option>
+        </select>
       </div>
       {filteredMarathons.length === 0 ? (
      <p className="text-center pb-8">You have not applied for any marathons yet.</p>

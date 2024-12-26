@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import MarathonCard from "./MarathonCard";
+import Spinner from "../pages/shared/Spinner";
 
 const Marathon = () => {
   const [marathons, setMarathons] = useState([]); 
@@ -7,7 +8,7 @@ const Marathon = () => {
   const [error, setError] = useState(null); 
 
   useEffect(() => {
-    fetch("http://localhost:3000/marathons")
+    fetch("https://project-11-server-ten.vercel.app/marathons")
       .then((res) => {
         if (!res.ok) {
           throw new Error("Failed to fetch marathons");
@@ -25,7 +26,7 @@ const Marathon = () => {
   }, []);
 
   if (loading) {
-    return <p className="text-center text-xl text-blue-600">Loading marathons...</p>;
+    return <Spinner></Spinner>
   }
 
   if (error) {

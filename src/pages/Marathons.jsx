@@ -4,7 +4,7 @@ import MarathonCard from "../components/MarathonCard";
 const Marathons = () => {
       const [marathons, setMarathons] = useState([]); 
       useEffect(() => {
-        fetch('http://localhost:3000/marathons')
+        fetch('https://project-11-server-ten.vercel.app/marathons')
         .then(res => res.json())
         .then(data => setMarathons(data))
 

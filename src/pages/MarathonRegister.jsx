@@ -20,7 +20,7 @@ const MarathonRegister = () => {
   useEffect(() => {
     const fetchMarathonDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/marathons/${id}`);
+        const response = await fetch(`https://project-11-server-ten.vercel.app/marathons/${id}`);
         const data = await response.json();
         if (data) {
           setMarathonTitle(data.title);
@@ -54,7 +54,7 @@ const MarathonRegister = () => {
       otherinfo
     }
 
-    fetch('http://localhost:3000/marathon-applications', {
+    fetch('https://project-11-server-ten.vercel.app/marathon-applications', {
       method: 'POST',
       headers: {
           'content-type': 'application/json'

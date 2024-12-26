@@ -17,7 +17,7 @@ const MyList = () => {
 
 
   useEffect(() => {
-      fetch(`http://localhost:3000/marathons?email=${user.email}`)
+      fetch(`https://project-11-server-ten.vercel.app/marathons?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setMarathons(data);
@@ -53,7 +53,7 @@ const MyList = () => {
       location: form.location.value,
     };
 
-    fetch(`http://localhost:3000/marathons/${selectedMarathon._id}`, {
+    fetch(`https://project-11-server-ten.vercel.app/marathons/${selectedMarathon._id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(updatedData),
@@ -83,7 +83,7 @@ const MyList = () => {
       confirmButtonText: 'Yes, delete it!',
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/marathons/${marathonId}`, {
+        fetch(`https://project-11-server-ten.vercel.app/marathons/${marathonId}`, {
           method: 'DELETE',
         })
           .then(() => {
@@ -119,7 +119,7 @@ const MyList = () => {
       {marathons.length === 0 ? (
         <p className="text-center">You have not added any campaigns yet.</p>
       ) : (
-        <table className="table-auto w-11/12 mx-auto border border-gray-200 m-8">
+        <table className="table-auto border-collapse border border-blue-950 mx-5 w-[1000px]">
           <thead>
             <tr>
               <th className="border px-4 py-2">Image</th>
@@ -133,7 +133,7 @@ const MyList = () => {
           <tbody>
             {marathons.map((marathon) => (
               <tr key={marathon._id}>
-                <td className="border px-4 py-2">
+                <td className="border border-b-4 border-red-300 px-4 py-2">
                   <img src={marathon.image} alt={marathon.title} className="w-16 h-16 object-cover" />
                 </td>
                 <td className="border px-4 py-2">{marathon.title}</td>

@@ -61,7 +61,7 @@ const AddMara = () => {
     //console.log("Submitting payload:", newMarathon); // Debugging payload
 
     try {
-      const response = await fetch("http://localhost:3000/marathons", {
+      const response = await fetch("https://project-11-server-ten.vercel.app/marathons", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
