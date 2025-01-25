@@ -1,17 +1,20 @@
 import Lottie from 'lottie-react';
 import loginAnimation from '../assets/login.json'
 import { Link, useNavigate } from 'react-router-dom';
-import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-import { auth } from '../firebase.config';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { toast, ToastContainer } from 'react-toastify';
-import { useState } from 'react';
+import { useContext } from 'react';
+import { auth } from '../firebase.config';
+import AuthContext from '../context/AuthContext';
+
 
 
 const Login = () => {
+  const {signInUser} = useContext(AuthContext)
   const navigate = useNavigate();
   //const [user, setUser] = useState(null);
 
-  const [errorMessage, setErrorMessage] = useState('');
+  //const [errorMessage, setErrorMessage] = useState('');
 
 
   const provider = new GoogleAuthProvider()
@@ -32,7 +35,7 @@ const Login = () => {
     const password = e.target.password.value;
     //console.log(email, password)
 
-    createUserWithEmailAndPassword(auth, email, password)
+    signInUser(email, password)
       .then((res) => {
         toast.success('Login successful!', {
           position: 'top-center',
@@ -41,13 +44,10 @@ const Login = () => {
         navigate('/');
       })
       .catch((error) => {
-        setErrorMessage(error.message);
-        toast.error(`Error: ${error.message}`, {
-          position: 'top-center',
-        });
-      });
-  }
-
+        console.log(error)
+       
+      })
+    }
 
     return (
         <div className="hero bg-base-200 min-h-screen">

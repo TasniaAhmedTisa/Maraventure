@@ -112,7 +112,7 @@ const MyApply = () => {
   
 
   return (
-    <div className="bg-gradient-to-t from-cyan-600 w-11/12 mx-auto min-h-screen mb-10">
+    <div className="bg-gradient-to-t from-cyan-600 w-full min-h-screen mb-10">
       <h1 className="text-3xl font-bold text-center pt-10 py-4">My Apply List</h1>
        {/* Search Input */}
        <div className="flex justify-center mb-4">

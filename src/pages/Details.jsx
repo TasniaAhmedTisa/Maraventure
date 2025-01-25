@@ -25,6 +25,8 @@ const Details = () => {
             const startDate = new Date(data.startRegistrationDate);
             const endDate = new Date(data.endRegistrationDate);
             setIsRegistrationOpen(currentDate >= startDate && currentDate <= endDate);
+            console.log({ currentDate, startDate, endDate, isRegistrationOpen: currentDate >= startDate && currentDate <= endDate });
+
 
             setLoading(false);
           })

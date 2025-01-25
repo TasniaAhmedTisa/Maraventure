@@ -113,21 +113,22 @@ const MyList = () => {
     
 
   return (
-    <div className="bg-gradient-to-t from-cyan-600 mx-auto min-h-screen m-10">
+    <div className="bg-gradient-to-t from-cyan-600 w-full min-h-screen m-10">
       <h1 className="text-3xl font-bold text-center py-10">My Marathon List</h1>
 
       {marathons.length === 0 ? (
         <p className="text-center">You have not added any campaigns yet.</p>
       ) : (
-        <table className="table-auto border-collapse border border-blue-950 mx-5 w-[1000px]">
+        <div className='flex justify-center'>
+          <table className="table-auto border-collapse border border-blue-950 mx-5 lg:w-[1000px]">
           <thead>
             <tr>
-              <th className="border px-4 py-2">Image</th>
-              <th className="border px-4 py-2">Title</th>
-              <th className="border px-4 py-2">Registration Start Date</th>
-              <th className="border px-4 py-2">Registration End Date</th>
-              <th className="border px-4 py-2">Marathon Start</th>
-              <th className="border px-4 py-2">Actions</th>
+              <th className="border border-b-4 border-red-300 px-4 py-2">Image</th>
+              <th className="border border-b-4 border-red-300 px-4 py-2">Title</th>
+              <th className="border border-b-4 border-red-300 px-4 py-2">Registration Start Date</th>
+              <th className="border border-b-4 border-red-300 px-4 py-2">Registration End Date</th>
+              <th className="border border-b-4 border-red-300 px-4 py-2">Marathon Start</th>
+              <th className="border border-b-4 border-red-300 px-4 py-2">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -136,11 +137,11 @@ const MyList = () => {
                 <td className="border border-b-4 border-red-300 px-4 py-2">
                   <img src={marathon.image} alt={marathon.title} className="w-16 h-16 object-cover" />
                 </td>
-                <td className="border px-4 py-2">{marathon.title}</td>
-                <td className="border px-4 py-2">{marathon.startRegistrationDate}</td>
-                <td className="border px-4 py-2">{marathon.endRegistrationDate}</td>
-                <td className="border px-4 py-2">{marathon.marathonStartDate}</td>
-                <td className="border px-4 py-2">
+                <td className="border border-b-4 border-red-300 px-4 py-2">{marathon.title}</td>
+                <td className="border border-b-4 border-red-300 px-4 py-2">{marathon.startRegistrationDate}</td>
+                <td className="border border-b-4 border-red-300 px-4 py-2">{marathon.endRegistrationDate}</td>
+                <td className="border border-b-4 border-red-300 px-4 py-2">{marathon.marathonStartDate}</td>
+                <td className="border border-b-4 border-red-300 px-4 py-2">
                   <button
                     className="bg-blue-500 text-white px-3 py-1 rounded mr-2"
                     onClick={() => handleUpdate(marathon)}
@@ -158,6 +159,7 @@ const MyList = () => {
             ))}
           </tbody>
         </table>
+        </div>
       )}
       {/* Update Marathon Modal */}
       {modalOpen && selectedMarathon && (
