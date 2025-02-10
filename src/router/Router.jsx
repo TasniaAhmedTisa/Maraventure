@@ -12,6 +12,10 @@ import Details from "../pages/Details";
 import PrivateRoute from "./PrivateRoute";
 import MarathonRegister from "../pages/MarathonRegister";
 import MyApply from "../pages/MyApply";
+import Contact from "../pages/Contact";
+import Blog from "../pages/FAQs";
+import { FaQ } from "react-icons/fa6";
+import FAQs from "../pages/FAQs";
 
 
 const Router = createBrowserRouter([
@@ -26,6 +30,16 @@ const Router = createBrowserRouter([
         {
           path: '/marathon',
           element:<PrivateRoute><Marathons></Marathons></PrivateRoute>
+        },
+        {
+          path: '/contact',
+          element: <Contact></Contact>
+
+        },
+        {
+          path: '/FAQs',
+          element: <FAQs></FAQs>
+
         },
         {
           path: '/dashboard',

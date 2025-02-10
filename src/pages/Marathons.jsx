@@ -13,7 +13,7 @@ const Marathons = () => {
     
     return (
         <div className="m-8 bg-gradient-to-r from-blue-100 via-red-200 to-blue-400 p-5">
-            <h1 className="text-3xl font-bold text-center mb-6 text-blue-600s">
+            <h1 className="text-4xl font-bold text-center mb-6 text-blue-700">
              Marathons
           </h1>
             <h1 className="text-center font-bold text-xl">Welcome to Marathon Management System!</h1>

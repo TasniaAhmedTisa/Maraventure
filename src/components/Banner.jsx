@@ -3,7 +3,7 @@ import React from 'react';
 const Banner = () => {
     return (
         <div>
-            <div className="carousel w-full h-[510px]">
+            <div className="carousel w-full h-[560px] my-10">
   <div id="item1" className="carousel-item w-full object-cover">
     <img
       src="https://i.ibb.co.com/XDgHz5G/s1.jpg"

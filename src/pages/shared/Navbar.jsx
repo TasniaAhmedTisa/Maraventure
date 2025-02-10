@@ -1,6 +1,5 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import logo from "../../assets/logo.jpg"
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import AuthContext from "../../context/AuthContext";
 
 const Navbar = () => {
@@ -23,32 +22,41 @@ const Navbar = () => {
   };
   const linksBeforeLogin = (
     <>
-      <li><Link to="/" className="text-lg">Home</Link></li>
-      <li><Link to="/marathon" className="text-lg">Marathons</Link></li>
+      <li><Link to="/" className="text-lg text-white">Home</Link></li>
+      <li><Link to="/marathon" className="text-lg text-white">Marathons</Link></li>
+      <li><Link to="/contact" className="text-lg text-white">Contact Us</Link></li>
+      <li><Link to="/FAQs" className="text-lg text-white">FAQ's</Link></li>
+
+
       
     </>
   );
 
   const linksAfterLogin = (
     <>
-      <li><Link to="/" className="text-lg">Home</Link></li>
-      <li><Link to="/marathon" className="text-lg">Marathons</Link></li>
+      <li><Link to="/" className="text-lg text-white">Home</Link></li>
+      <li><Link to="/marathon" className="text-lg text-white">Marathons</Link></li>
+      <li><Link to="/contact" className="text-lg text-white">Contact Us</Link></li>
+      <li><Link to="/FAQs" className="text-lg text-white">FAQ's</Link></li>
+
+
       <li tabIndex={0} className="relative group">
-        <Link to="/dashboard" className="text-lg">
+        <Link to="/dashboard" className="text-lg text-white">
           Dashboard
         </Link>
         
       </li>
+
     </>
   );
     return (
-        <div className="navbar shadow border rounded-t-lg mb- bg-gradient-to-r from-white via-blue-200 to-black ">
+        <div className="navbar shadow border  bg-gradient-to-r from-blue-400 to-black px-8">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5"
+          className="h-5 w-5 text-white"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor">
@@ -61,11 +69,11 @@ const Navbar = () => {
       </div>
       <ul
         tabIndex={0}
-        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+        className="menu menu-sm dropdown-content bg-current rounded-box z-[1] mt-3 w-52 p-2 shadow">
             {user ? linksAfterLogin : linksBeforeLogin}
         </ul>
     </div>
-    <a className="btn btn-ghost text-2xl font-extrabold"><img src={logo} alt="" className="w-20 h-[50px]"/>Maraventure</a>
+    <Link to="/" className="text-2xl font-extrabold text-white">Maraventure</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -88,17 +96,17 @@ const Navbar = () => {
               </div>
               <button
                 onClick={handleLogout}
-                className="btn btn-primary bg-red-600 text-white px-4"
+                className="btn btn-primary bg-red-200 text-black px-4"
               >
                 Log Out
               </button>
               </div>
           ) : (
             <div className="flex gap-3">
-                <NavLink to="/login" className="btn bg-gray-800 text-white">
+                <NavLink to="/login" className="btn bg-red-200 text-black">
               Login
             </NavLink>
-            <NavLink to="/register" className="btn bg-gray-800 text-white">
+            <NavLink to="/register" className="btn bg-red-200 text-black">
               Register
             </NavLink>
             </div>

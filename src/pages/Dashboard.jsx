@@ -2,7 +2,7 @@ import { Link, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
   return (
-    <div className="flex my-5">
+    <div className="flex my-10">
       {/* Sidebar */}
       <div className="bg-gray-800 w-64 text-white p-5 py-10">
         <h2 className="text-2xl font-bold mb-6">Dashboard</h2>
