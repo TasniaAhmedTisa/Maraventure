@@ -31,21 +31,22 @@ const Router = createBrowserRouter([
           path: '/dashboard',
           element: <Dashboard></Dashboard>,
           children:[
+            {
+              path:'/dashboard/addmara',
+              element:<PrivateRoute><AddMara></AddMara></PrivateRoute>
+            },
+            {
+              path:'/dashboard/my-list',
+              element:<MyList></MyList>
+            },
+            {
+              path:'/dashboard/apply-list',
+              element:<MyApply></MyApply>
+            },
             
           ]
         },
-        {
-          path:'/dashboard/addmara',
-          element:<PrivateRoute><AddMara></AddMara></PrivateRoute>
-        },
-        {
-          path:'/dashboard/my-list',
-          element:<MyList></MyList>
-        },
-        {
-          path:'/dashboard/apply-list',
-          element:<MyApply></MyApply>
-        },
+        
         {
             path: 'register',
             element: <Register></Register>

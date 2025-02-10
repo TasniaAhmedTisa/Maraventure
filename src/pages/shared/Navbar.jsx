@@ -37,25 +37,7 @@ const Navbar = () => {
         <Link to="/dashboard" className="text-lg">
           Dashboard
         </Link>
-        <ul
-          className="absolute hidden group-hover:block bg-white shadow-lg rounded-lg z-10 p-2 w-40"
-          style={{ top: "100%", left: "0" }}
-        >
-          <li>
-            <Link to="/dashboard/addmara" className="block px-4 py-2 hover:bg-gray-100">
-              Add Marathon
-            </Link>
-          </li>
-          <li>
-            <Link to="/dashboard/my-list" className="block px-4 py-2 hover:bg-gray-100">
-            My Marathon List            </Link>
-          </li>
-          <li>
-            <Link to="/dashboard/apply-list" className="block px-4 py-2 hover:bg-gray-100">
-            My Apply List         
-               </Link>
-          </li>
-        </ul>
+        
       </li>
     </>
   );

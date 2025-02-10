@@ -51,10 +51,10 @@ const Details = () => {
       <p className="text-xl"><strong>Running Distance:</strong> {marathon.runningDistance}</p>
       <p className="text-xl"><strong>Registation Count:</strong>{marathon.count}</p>
 
-      <div className="mt-6">
+      <div className="mt-4">
         {isRegistrationOpen ? (
           <Link to={`/marathonapply/${id}`}>
-            <button className="bg-red-500 text-white font-semibold px-6 py-2 rounded hover:bg-red-600 transition-colors duration-300">
+            <button className="bg-red-500 text-white font-semibold px-6 py-2 rounded hover:bg-red-600 transition-colors duration-300 mb-4">
               Register
             </button>
           </Link>

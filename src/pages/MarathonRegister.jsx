@@ -80,7 +80,7 @@ const MarathonRegister = () => {
     
 
   return (
-    <div className="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-lg">
+    <div className="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-lg mt-2">
       <ToastContainer />
       <h2 className="text-2xl font-bold text-blue-600 mb-6">Register for {marathonTitle}</h2>
       <form onSubmit={handleFormSubmit}>
