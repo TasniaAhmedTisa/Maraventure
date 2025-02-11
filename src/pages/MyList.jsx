@@ -113,7 +113,7 @@ const MyList = () => {
     
 
   return (
-    <div className="bg-gradient-to-t from-cyan-600 w-full min-h-screen m-10">
+    <div className="bg-transparent w-full min-h-screen mb-10">
       <h1 className="text-3xl font-bold text-center py-10">My Marathon List</h1>
 
       {marathons.length === 0 ? (

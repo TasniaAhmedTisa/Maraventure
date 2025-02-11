@@ -34,11 +34,11 @@ const Marathon = () => {
   }
 
   return (
-    <div className="my-10">
-      <h1 className="text-3xl font-bold text-center mb-6 text-blue-600">Marathons</h1>
+    <div className="my-10 px-10 bg-gradient-to-l from-blue-100 via-blue-200 to-blue-400 ">
+      <h1 className="text-3xl font-bold text-center mb-3 pt-6 text-blue-600">Marathons</h1>
       <h1 className="text-center font-bold text-xl">Welcome to the Marathon Management System!</h1>
-      <p className="text-center text-xl">Explore marathons and register today!</p>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-4">
+      <p className="text-center text-lg">Explore marathons and register today!</p>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-8 px-4">
         {marathons.length > 0 ? (
            marathons.slice(0, 6).map((marathon) => (
             <MarathonCard key={marathon._id} marathon={marathon}></MarathonCard>

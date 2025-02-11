@@ -29,10 +29,10 @@ const FAQs = () => {
   };
 
   return (
-    <div className="mt-10 py-14 bg-gray-200 text-white flex items-center justify-center px-6 ">
+    <div className="py-14 bg-gradient-to-r from-blue-100 via-red-200 to-blue-400 text-white flex items-center justify-center px-6 ">
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-4xl font-bold text-center mb-4 text-blue-700">FAQ's</h2>
-        <p className="text-center text-gray-400 mb-8">
+        <p className="text-center text-gray-500 mb-8">
           Stay updated with the latest tips, guides, and running advice.
         </p>
 

@@ -22,7 +22,7 @@ const Contact = () => {
 
   return (
     <div>
-        <div className="mt-10 py-14 bg-gray-100  items-center justify-center">
+        <div className=" py-14 bg-gradient-to-r from-blue-100 via-red-200 to-blue-400  items-center justify-center">
         <h1 className="text-4xl font-bold text-center uppercase text-blue-700">Contact with us</h1>
 
       <div className="container mx-auto p-8">

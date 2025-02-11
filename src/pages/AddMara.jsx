@@ -86,7 +86,7 @@ const AddMara = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
+    <div className="min-h-screen bg-transparent p-8">
       <ToastContainer />
       <div className="max-w-3xl mx-auto bg-white p-8 rounded shadow-md">
         <h2 className="text-2xl font-bold mb-4">Add New Marathon</h2>

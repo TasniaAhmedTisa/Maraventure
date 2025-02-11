@@ -40,7 +40,7 @@ const Details = () => {
       if (loading) return <Spinner></Spinner>
       if (error) return <p className="text-center text-xl text-red-600">Error: {error}</p>;
     return (
-        <div className="m-8 text-center bg-gradient-to-r from-blue-100 via-red-200 to-blue-400">
+        <div className="pt-5 pb-10 text-center bg-gradient-to-r from-blue-100 via-red-200 to-blue-400">
       <h1 className="text-3xl font-bold text-center mb-6 text-blue-600 p-5">{marathon.title}</h1>
       <img className="w-2/5 h-80 object-cover mb-6 mx-auto rounded-lg" src={marathon.image} alt={marathon.title} />
       <p className="text-xl"><strong>Location:</strong> {marathon.location}</p>

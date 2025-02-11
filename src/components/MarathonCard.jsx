@@ -19,12 +19,12 @@ const MarathonCard = ({ marathon }) => {
       </figure>
       <div className="card-body">
         <h2 className="card-title">{title}</h2>
-        <p>Location: {location}</p>
-        <p>Registration Start: {new Date(startRegistrationDate).toLocaleString()}</p>
-        <p>Registration End: {new Date(endRegistrationDate).toLocaleString()}</p>
-        <p>Marathon Start: {new Date(marathonStartDate).toLocaleString()}</p>
+        <p className="text-sm">Location: {location}</p>
+        <p className="text-sm">Registration Start: {new Date(startRegistrationDate).toLocaleString()}</p>
+        <p className="text-sm">Registration End: {new Date(endRegistrationDate).toLocaleString()}</p>
+        <p className="text-sm">Marathon Start: {new Date(marathonStartDate).toLocaleString()}</p>
 
-        <div className="flex justify-center mt-4">
+        <div className="flex justify-center mt-2">
           {isRegistrationOpen ? (
             <div className="text-center">
               <p className="text-lg font-bold text-green-600">Registration Open</p>

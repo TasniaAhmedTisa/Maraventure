@@ -2,7 +2,7 @@ import { Link, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
   return (
-    <div className="flex my-10">
+    <div className="flex bg-gradient-to-r from-blue-100 via-red-200 to-blue-400">
       {/* Sidebar */}
       <div className="bg-gray-800 w-64 text-white p-5 py-10">
         <h2 className="text-2xl font-bold mb-6">Dashboard</h2>
@@ -30,7 +30,7 @@ const Dashboard = () => {
       {/* Main Content */}
       <div className="flex-1 p-6">
         {/* Header */}
-        <header className="flex justify-between items-center border-b pb-4 mb-6">
+        <header className="flex justify-between items-center border-b-2 border-black pb-4 mb-6">
           <h1 className="text-3xl font-semibold">Dashboard</h1>
           
         </header>
