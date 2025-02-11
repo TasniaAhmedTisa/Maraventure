@@ -1,10 +1,12 @@
 import { Link, Outlet } from "react-router-dom";
+import 'animate.css';
+
 
 const Dashboard = () => {
   return (
-    <div className="flex bg-gradient-to-r from-blue-100 via-red-200 to-blue-400">
+    <div className="flex flex-col md:flex-row min-h-screen bg-gradient-to-r from-blue-100 via-red-200 to-blue-400">
       {/* Sidebar */}
-      <div className="bg-gray-800 w-64 text-white p-5 py-10">
+      <div className="bg-gray-800 md:w-48 sm:w-32 lg:w-64 text-white p-5 py-10">
         <h2 className="text-2xl font-bold mb-6">Dashboard</h2>
         <ul>
           <li className="mb-4">
@@ -31,7 +33,7 @@ const Dashboard = () => {
       <div className="flex-1 p-6">
         {/* Header */}
         <header className="flex justify-between items-center border-b-2 border-black pb-4 mb-6">
-          <h1 className="text-4xl font-bold text-blue-700 uppercase">Dashboard</h1>
+          <h1 className="text-4xl font-bold text-blue-700 uppercase animate__animated animate__lightSpeedInLeft">Dashboard</h1>
           
         </header>
 

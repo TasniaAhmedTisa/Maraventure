@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
+import 'animate.css';
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -23,7 +25,7 @@ const Contact = () => {
   return (
     <div>
         <div className=" py-14 bg-gradient-to-r from-blue-100 via-red-200 to-blue-400  items-center justify-center">
-        <h1 className="text-4xl font-bold text-center uppercase text-blue-700">Contact with us</h1>
+        <h1 className="text-4xl font-bold text-center uppercase text-blue-700 animate__animated animate__lightSpeedInLeft">Contact with us</h1>
 
       <div className="container mx-auto p-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-white p-10 rounded-lg shadow-lg">

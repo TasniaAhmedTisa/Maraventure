@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaPlus, FaMinus } from "react-icons/fa";
+import 'animate.css';
+
 
 const blogs = [
   {
@@ -31,8 +33,8 @@ const FAQs = () => {
   return (
     <div className="py-14 bg-gradient-to-r from-blue-100 via-red-200 to-blue-400 text-white flex items-center justify-center px-6 ">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-4xl font-bold text-center mb-4 text-blue-700">FAQ's</h2>
-        <p className="text-center text-gray-500 mb-8">
+        <h2 className="text-4xl font-bold text-center mb-4 text-blue-700 animate__animated animate__lightSpeedInLeft">FAQ's</h2>
+        <p className="text-center text-xl text-black mb-8 animate__animated animate__lightSpeedInRight">
           Stay updated with the latest tips, guides, and running advice.
         </p>
 

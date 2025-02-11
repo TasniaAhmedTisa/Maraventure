@@ -1,5 +1,7 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
+import 'animate.css';
+
 import AuthContext from "../../context/AuthContext";
 
 const Navbar = () => {
@@ -50,7 +52,7 @@ const Navbar = () => {
     </>
   );
     return (
-        <div className="navbar sticky top-0 z-50 shadow border  bg-gradient-to-r from-sky-500 to-black px-8">
+        <div className="navbar sticky top-0 z-50 shadow border  bg-gradient-to-r from-sky-500 to-black lg:px-8">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle gap-1 lg:hidden">
@@ -73,7 +75,7 @@ const Navbar = () => {
             {user ? linksAfterLogin : linksBeforeLogin}
         </ul>
     </div>
-    <Link to="/" className="text-2xl font-extrabold text-white">Maraventure</Link>
+    <Link to="/" className="animate__animated animate__rollIn text-2xl font-extrabold text-white">Maraventure</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">

@@ -56,24 +56,24 @@ const Marathons = () => {
     
     return (
         <div className=" bg-gradient-to-r from-blue-100 via-red-200 to-blue-400 px-5 py-14">
-            <h1 className="text-4xl font-bold text-center mb-6 uppercase text-blue-700">
+            <h1 className="animate__animated animate__lightSpeedInLeft text-4xl font-bold text-center mb-6 uppercase text-blue-700">
              Marathons
           </h1>
-            <h1 className="text-center font-bold text-xl">Welcome to Marathon Management System!</h1>
-            <p className="text-center text-xl">Explore marathons and register today!</p>
+            <h1 className="animate__animated animate__lightSpeedInRight text-center font-bold text-xl">Welcome to Marathon Management System!</h1>
+            <p className="animate__animated animate__lightSpeedInRight text-center text-xl">Explore marathons and register today!</p>
 
             <div className="flex justify-center space-x-4 my-6">
              <button
               onClick={() => handleSort("asc")}
               className={`px-6 py-2 rounded-md font-semibold transition ${
-              sortOrder === "asc" ? "bg-red-300 text-black" : "bg-blue-400 text-black hover:bg-blue-700"
+              sortOrder === "asc" ? "bg-red-300 text-black" : "bg-blue-300 text-black hover:bg-blue-700"
               }`} >
               Sort by Marathon start date (asc)
              </button>
              <button
              onClick={() => handleSort("desc")}
-             className={`btn px-6 py-2 rounded-lg font-semibold transition ${
-             sortOrder === "desc" ? "bg-red-300 text-black" : "bg-blue-400 text-black hover:bg-blue-700"
+             className={` px-6 py-2 rounded-lg font-semibold transition ${
+             sortOrder === "desc" ? "bg-red-300 text-black" : "bg-blue-300 text-black hover:bg-blue-700"
              }`}>
               Sort by Marathon start date (desc)
               </button>

@@ -119,29 +119,29 @@ const MyList = () => {
       {marathons.length === 0 ? (
         <p className="text-center">You have not added any campaigns yet.</p>
       ) : (
-        <div className='flex justify-center'>
-          <table className="table-auto border-collapse border border-blue-950 mx-5 lg:w-[1000px]">
+        <div className='overflow-x-auto flex lg:justify-center'>
+          <table className="table-auto border-collapse border border-blue-950 w-full text-xs sm:text-sm">
           <thead>
             <tr>
-              <th className="border border-b-4 border-red-300 px-4 py-2">Image</th>
-              <th className="border border-b-4 border-red-300 px-4 py-2">Title</th>
-              <th className="border border-b-4 border-red-300 px-4 py-2">Registration Start Date</th>
-              <th className="border border-b-4 border-red-300 px-4 py-2">Registration End Date</th>
-              <th className="border border-b-4 border-red-300 px-4 py-2">Marathon Start</th>
-              <th className="border border-b-4 border-red-300 px-4 py-2">Actions</th>
+              <th className="border border-b-4 border-red-300 px-2 py-1">Image</th>
+              <th className="border border-b-4 border-red-300 px-2 py-1">Title</th>
+              <th className="border border-b-4 border-red-300 px-2 py-1">Registration Start Date</th>
+              <th className="border border-b-4 border-red-300 px-2 py-1">Registration End Date</th>
+              <th className="border border-b-4 border-red-300 px-2 py-1">Marathon Start</th>
+              <th className="border border-b-4 border-red-300 px-2 py-1">Actions</th>
             </tr>
           </thead>
           <tbody>
             {marathons.map((marathon) => (
               <tr key={marathon._id}>
-                <td className="border border-b-4 border-red-300 px-4 py-2">
-                  <img src={marathon.image} alt={marathon.title} className="w-16 h-16 object-cover" />
+                <td className="border border-b-4 border-red-300 px-2 py-1">
+                  <img src={marathon.image} alt={marathon.title} className="w-12 h-12 object-cover" />
                 </td>
-                <td className="border border-b-4 border-red-300 px-4 py-2">{marathon.title}</td>
-                <td className="border border-b-4 border-red-300 px-4 py-2">{marathon.startRegistrationDate}</td>
-                <td className="border border-b-4 border-red-300 px-4 py-2">{marathon.endRegistrationDate}</td>
-                <td className="border border-b-4 border-red-300 px-4 py-2">{marathon.marathonStartDate}</td>
-                <td className="border border-b-4 border-red-300 px-4 py-2">
+                <td className="border border-b-4 border-red-300 px-2 py-1">{marathon.title}</td>
+                <td className="border border-b-4 border-red-300 px-2 py-1">{marathon.startRegistrationDate}</td>
+                <td className="border border-b-4 border-red-300 px-2 py-1">{marathon.endRegistrationDate}</td>
+                <td className="border border-b-4 border-red-300 px-2 py-1">{marathon.marathonStartDate}</td>
+                <td className="border border-b-4 border-red-300 px-2 py-1">
                   <button
                     className="bg-blue-500 text-white px-3 py-1 rounded mr-2"
                     onClick={() => handleUpdate(marathon)}
