@@ -29,7 +29,7 @@ const FAQs = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-200 text-white flex items-center justify-center px-6 ">
+    <div className="mt-10 py-14 bg-gray-200 text-white flex items-center justify-center px-6 ">
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-4xl font-bold text-center mb-4 text-blue-700">FAQ's</h2>
         <p className="text-center text-gray-400 mb-8">

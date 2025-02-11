@@ -40,7 +40,7 @@ const Navbar = () => {
       <li><Link to="/FAQs" className="text-lg text-white">FAQ's</Link></li>
 
 
-      <li tabIndex={0} className="relative group">
+      <li>
         <Link to="/dashboard" className="text-lg text-white">
           Dashboard
         </Link>
@@ -50,12 +50,12 @@ const Navbar = () => {
     </>
   );
     return (
-        <div className="navbar shadow border  bg-gradient-to-r from-blue-400 to-black px-8">
+        <div className="navbar sticky top-0 z-50 shadow border  bg-gradient-to-r from-sky-500 to-black px-8">
   <div className="navbar-start">
     <div className="dropdown">
-      <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+      <div tabIndex={0} role="button" className="btn btn-ghost btn-circle gap-1 lg:hidden">
         <svg
-          xmlns="http://www.w3.org/2000/svg"
+          xmlns="http://www.w3.org/2000/svg" 
           className="h-5 w-5 text-white"
           fill="none"
           viewBox="0 0 24 24"
