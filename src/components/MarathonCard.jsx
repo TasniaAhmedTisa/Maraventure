@@ -3,7 +3,7 @@ import { CountdownCircleTimer } from "react-countdown-circle-timer";
 
 const MarathonCard = ({ marathon }) => {
   // eslint-disable-next-line react/prop-types
-  const { _id, image, title, location, startRegistrationDate, endRegistrationDate, marathonStartDate } = marathon;
+  const { _id, image, title, location, startRegistrationDate, endRegistrationDate, marathonStartDate, runningDistance } = marathon;
 
   const startDate = new Date(startRegistrationDate).getTime();
   const endDate = new Date(endRegistrationDate).getTime();
@@ -23,6 +23,7 @@ const MarathonCard = ({ marathon }) => {
         <p className="text-sm">Registration Start: {new Date(startRegistrationDate).toLocaleString()}</p>
         <p className="text-sm">Registration End: {new Date(endRegistrationDate).toLocaleString()}</p>
         <p className="text-sm">Marathon Start: {new Date(marathonStartDate).toLocaleString()}</p>
+        <p>Running Distance: {runningDistance}</p>
 
         <div className="flex justify-center mt-2">
           {isRegistrationOpen ? (

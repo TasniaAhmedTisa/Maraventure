@@ -157,7 +157,7 @@ const MarathonRegister = () => {
         </div>
 
         <div className="text-right">
-          <button type="submit" className="btn btn-primary bg-red-300 text-black px-6 py-2 rounded hover:bg-blue-700">
+          <button type="submit" className="btn bg-red-300 text-black px-6 py-2 rounded hover:bg-blue-700">
             Register
           </button>
         </div>

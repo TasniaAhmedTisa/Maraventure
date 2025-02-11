@@ -31,7 +31,7 @@ const Dashboard = () => {
       <div className="flex-1 p-6">
         {/* Header */}
         <header className="flex justify-between items-center border-b-2 border-black pb-4 mb-6">
-          <h1 className="text-3xl font-semibold">Dashboard</h1>
+          <h1 className="text-4xl font-bold text-blue-700 uppercase">Dashboard</h1>
           
         </header>
 
