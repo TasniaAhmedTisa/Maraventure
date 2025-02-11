@@ -70,7 +70,7 @@ const Register = () => {
   };
 
     return (
-        <div className="hero bg-base-200 min-h-screen">
+        <div className="hero bg-gradient-to-r from-blue-100 via-red-200 to-blue-400 min-h-screen">
                     <ToastContainer></ToastContainer>
 
   <div className="hero-content flex-col lg:flex-row-reverse">
@@ -78,7 +78,7 @@ const Register = () => {
      <Lottie animationData={RegisterAnimation}></Lottie>
     </div>
     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-    <h1 className="ml-10 mt-4 text-5xl font-bold">Register now!</h1>
+    <h1 className="mt-4 text-5xl font-bold text-center">Register now!</h1>
 
       <form onSubmit={handleRegister}  className="card-body">
         <div className="form-control">

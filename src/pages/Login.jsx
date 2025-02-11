@@ -50,7 +50,7 @@ const Login = () => {
     }
 
     return (
-        <div className="hero bg-base-200 min-h-screen">
+        <div className="hero bg-gradient-to-r from-blue-100 via-red-200 to-blue-400 min-h-screen">
           <ToastContainer></ToastContainer>
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className="text-center lg:text-left w-80">
