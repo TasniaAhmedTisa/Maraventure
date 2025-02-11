@@ -54,7 +54,7 @@ const Details = () => {
       <div className="mt-4">
         {isRegistrationOpen ? (
           <Link to={`/marathonapply/${id}`}>
-            <button className="bg-red-500 text-white font-semibold px-6 py-2 rounded hover:bg-red-600 transition-colors duration-300 mb-4">
+            <button className="btn btn-primary bg-blue-300 text-black font-semibold px-6 py-2 rounded hover:bg-blue-500 transition-colors duration-300 mb-4">
               Register
             </button>
           </Link>

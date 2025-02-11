@@ -80,7 +80,8 @@ const MarathonRegister = () => {
     
 
   return (
-    <div className="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-lg mt-2">
+    <div className="bg-gradient-to-r from-blue-100 via-red-200 to-blue-400 py-10">
+      <div className="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-lg mt-2">
       <ToastContainer />
       <h2 className="text-2xl font-bold text-blue-600 mb-6">Register for {marathonTitle}</h2>
       <form onSubmit={handleFormSubmit}>
@@ -156,11 +157,12 @@ const MarathonRegister = () => {
         </div>
 
         <div className="text-right">
-          <button type="submit" className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">
+          <button type="submit" className="btn btn-primary bg-red-300 text-black px-6 py-2 rounded hover:bg-blue-700">
             Register
           </button>
         </div>
       </form>
+    </div>
     </div>
   );
 };

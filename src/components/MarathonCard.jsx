@@ -63,7 +63,7 @@ const MarathonCard = ({ marathon }) => {
 
         <div className="card-actions justify-end">
           <Link to={`/marathons/${_id}`}>
-            <button className="btn btn-primary bg-red-300 text-black border-red-500">See Details</button>
+            <button className="btn bg-red-300 text-black">See Details</button>
           </Link>
         </div>
       </div>
